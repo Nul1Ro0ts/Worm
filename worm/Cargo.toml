@@ -1,0 +1,15 @@
+[package]
+name = "worm"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+tokio = { version = "1", features = ["full"] }
+rand = "0.8"
+base64 = "0.22"
+
+[profile.release]
+opt-level = "z"
+lto = true
+strip = true
+panic = "abort"
